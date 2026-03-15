@@ -17,7 +17,7 @@ SELECT c2 AS experience_level, ROUND(AVG(c7), 0) AS average_salary, COUNT(*) AS 
 FROM salaries
 WHERE c2 != 'experience_level'
 GROUP BY c2
-ORDer BY average_salary DESC;
+ORDER BY average_salary DESC;
 
 --Note: Executive (EX) roles boast the highest average compensation at roughly $200,471. However, Senior (SE) roles hold the vast majority of the job market share with over 87,000 postings, averaging a highly competitive $172,658.
 
@@ -29,7 +29,7 @@ SELECT
     CASE
         WHEN c9 = '100' THEN 'Fully Remote'
         WHEN c9 = '50' THEN 'Hybrid'
-        WHEN c9 = '0' THen 'On-Site'
+        WHEN c9 = '0' THEN 'On-Site'
         ELSE 'Unknown'
     END AS work_model,
     ROUND(AVG(c7), 0) AS average_salary,
